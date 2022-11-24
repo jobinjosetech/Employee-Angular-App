@@ -9,6 +9,34 @@ import { SearchEmployeeComponent } from './search-employee/search-employee.compo
 import { DeleteEmployeeComponent } from './delete-employee/delete-employee.component';
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoutes:Routes = [
+  {
+    path:"",
+    component:AdminLoginComponent
+  },
+  {
+    path:"add",
+    component:AddEmployeeComponent
+  },
+  {
+    path:"search",
+    component:SearchEmployeeComponent
+  },
+  {
+    path:"edit",
+    component:EditEmployeeComponent
+  },
+  {
+    path:"delete",
+    component:DeleteEmployeeComponent
+  },
+  {
+    path:"view",
+    component:ViewEmployeeComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -22,7 +50,8 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
